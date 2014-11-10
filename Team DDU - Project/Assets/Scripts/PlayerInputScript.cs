@@ -54,5 +54,10 @@ public class PlayerInputScript : MonoBehaviour {
         {
             transform.Translate(Vector3.back * movementSpeed * Time.deltaTime);
         }
+
+        Vector3 tempVec = transform.position;
+        tempVec.z = transform.position.z - 4;
+        tempVec.y = transform.position.y + 4;
+        Camera.main.transform.position = tempVec;
 	}
 }
