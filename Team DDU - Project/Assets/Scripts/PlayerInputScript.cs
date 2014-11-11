@@ -11,6 +11,10 @@ public class PlayerInputScript : MonoBehaviour {
     private bool movingForward;
     private bool movingBack;
 
+    private float timeAfterShoot = 3;
+    private float timeToShoot = 3;
+    private bool canShoot = true;
+
 	void Start () {
         movementSpeed = GetComponent<PlayerPropertiesScript>().movementSpeed;
         rotationSpeed = GetComponent<PlayerPropertiesScript>().rotationalSpeed;
@@ -18,6 +22,23 @@ public class PlayerInputScript : MonoBehaviour {
 	}
 	
 	void Update () {
+
+        if (Input.GetMouseButton(0))
+        {
+            if (timeAfterShoot >= timeToShoot)
+            { 
+                timeAfterShoot = 0;
+                GameObject tempBullet = (GameObject)Instantiate(GameObject.Find("weaponOne").GetComponent<Weapon>().bulletPrefab, 
+                    GameObject.Find("bulletPosOne").transform.position, GameObject.Find("bulletPosOne").transform.rotation);
+                GameObject tempBullet2 = (GameObject)Instantiate(GameObject.Find("weaponTwo").GetComponent<Weapon>().bulletPrefab,
+                    GameObject.Find("bulletPosTwo").transform.position, GameObject.Find("bulletPosTwo").transform.rotation);
+                tempBullet.rigidbody.AddForce(GameObject.Find("bulletPosOne").transform.up * 300f);
+                tempBullet2.rigidbody.AddForce(GameObject.Find("bulletPosTwo").transform.up * 300f);
+            }
+        }
+        timeAfterShoot += 0.1f;
+
+        //rotation
         Plane playerPlane = new Plane(Vector3.up, transform.position);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float hitdist = 0.0f;

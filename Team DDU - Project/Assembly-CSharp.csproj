@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
      <Compile Include="Assets\Scripts\PlayerPropertiesScript.cs" />
+     <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\WeaponManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
