@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerInputScript : MonoBehaviour {
 
     private float movementSpeed;
-    private float rotationalSpeed;
+    private float rotationSpeed;
 
     private bool movingLeft;
     private bool movingRight;
@@ -13,7 +13,7 @@ public class PlayerInputScript : MonoBehaviour {
 
 	void Start () {
         movementSpeed = GetComponent<PlayerPropertiesScript>().movementSpeed;
-        rotationalSpeed = GetComponent<PlayerPropertiesScript>().rotationalSpeed;
+        rotationSpeed = GetComponent<PlayerPropertiesScript>().rotationalSpeed;
         movingLeft = movingRight = movingForward = movingBack = false;
 	}
 	
@@ -25,7 +25,7 @@ public class PlayerInputScript : MonoBehaviour {
         {
             Vector3 targetPoint = ray.GetPoint(hitdist);
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationalSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
         //movement
@@ -49,19 +49,19 @@ public class PlayerInputScript : MonoBehaviour {
 
         if (movingLeft == true)
         {
-            transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * movementSpeed * Time.deltaTime, Space.World);
         }
         else if (movingRight == true)
         {
-            transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * movementSpeed * Time.deltaTime, Space.World);
         }
         if (movingForward == true)
         {
-            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime, Space.World);
         }
         else if (movingBack == true)
         {
-            transform.Translate(Vector3.back * movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.back * movementSpeed * Time.deltaTime, Space.World);
         }
 
         Vector3 tempVec = transform.position;
