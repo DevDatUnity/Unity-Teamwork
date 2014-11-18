@@ -1,12 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerInputScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Scripting\Assets\Scripts\Move.cs">
     <Files>
-      <File FileName="..\..\..\Deiv programs\unity test\Assets\Common Scripts\TriggerSpawner.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\Deiv programs\unity test\Assets\Common Scripts\TimerClass.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\Deiv programs\unity test\Assets\Common Scripts\SpawnController.cs" Line="1" Column="1" />
-      <File FileName="C:\Users\Gleomit\Desktop\UnityCoursePhysics\Assets\Scritps\FPS\PlayerWeaponScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerInputScript.cs" Line="1" Column="1" />
+      <File FileName="..\..\Scripting\Assets\Scripts\Move.cs" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
