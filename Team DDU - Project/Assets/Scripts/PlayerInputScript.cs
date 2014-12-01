@@ -28,12 +28,7 @@ public class PlayerInputScript : MonoBehaviour {
             if (timeAfterShoot >= timeToShoot)
             { 
                 timeAfterShoot = 0;
-                GameObject tempBullet = (GameObject)Instantiate(GameObject.Find("weaponOne").GetComponent<Weapon>().bulletPrefab, 
-                    GameObject.Find("bulletPosOne").transform.position, GameObject.Find("bulletPosOne").transform.rotation);
-                GameObject tempBullet2 = (GameObject)Instantiate(GameObject.Find("weaponTwo").GetComponent<Weapon>().bulletPrefab,
-                    GameObject.Find("bulletPosTwo").transform.position, GameObject.Find("bulletPosTwo").transform.rotation);
-                tempBullet.rigidbody.AddForce(GameObject.Find("bulletPosOne").transform.up * 300f);
-                tempBullet2.rigidbody.AddForce(GameObject.Find("bulletPosTwo").transform.up * 300f);
+                this.GetComponent<WeaponManager>().getCurrentWep().GetComponent<WeaponBullet>().Shoot();
             }
         }
         timeAfterShoot += 0.1f;

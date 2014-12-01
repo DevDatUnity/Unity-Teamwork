@@ -47,9 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAdvanced.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyDynamic.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyMain.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStatic.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\PlayerInputScript.cs" />
      <Compile Include="Assets\Scripts\PlayerPropertiesScript.cs" />
-     <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponBullet.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponMain.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponRaycast.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
