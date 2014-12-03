@@ -8,5 +8,6 @@ public class EnemyMain : MonoBehaviour {
     public float activateRadius;
     public float deactivateRadius;
     public float fireInterval;
+	public float enemySpeed;
     protected bool activated;
 }
