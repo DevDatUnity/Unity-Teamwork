@@ -12,13 +12,14 @@ public class EnemyStatic : EnemyMain {
         {
             activated = true;
             Debug.Log("In");
-			transform.Translate(0.0f,-enemySpeed*Time.deltaTime,0.0f,Space.World);
-			transform.LookAt(thePlayer.transform.position);
         }
         if (activated == true && Vector3.Distance(thePlayer.transform.position, this.transform.position) > this.deactivateRadius)
         {
             activated = false;
             Debug.Log("Out");
         }
+		if (activated == true) {
+			transform.LookAt(thePlayer.transform.position);
+		}
 	}
 }
