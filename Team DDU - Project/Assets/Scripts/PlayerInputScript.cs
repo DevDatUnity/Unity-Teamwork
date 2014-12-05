@@ -5,6 +5,8 @@ public class PlayerInputScript : MonoBehaviour {
 
     private float movementSpeed;
     private float rotationSpeed;
+	private int cameraPos = 10;
+
 
     private bool movingLeft;
     private bool movingRight;
@@ -81,8 +83,8 @@ public class PlayerInputScript : MonoBehaviour {
         }
 
         Vector3 tempVec = transform.position;
-        tempVec.z = transform.position.z - 4;
-        tempVec.y = transform.position.y + 4;
+        tempVec.z = transform.position.z - cameraPos;
+        tempVec.y = transform.position.y + cameraPos;
         Camera.main.transform.position = tempVec;
 	}
 }

@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class EnemyDynamic : EnemyMain {
-    public float movementSpeed;
-    public float rotationSpeed;
+	public float boomRange;
+	public float explodeTime;
     
 	// Use this for initialization
 	void Start () {
@@ -12,15 +12,38 @@ public class EnemyDynamic : EnemyMain {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(thePlayer.transform.position, this.transform.position) < this.activateRadius && activated == false)
-        {
+        if (Vector3.Distance(thePlayer.transform.position, this.transform.position) < this.activateRadius && activated == false){
             activated = true;
-            Debug.Log("In");
+            Debug.Log("Dynamic In");
+
+
         }
-        if (activated == true && Vector3.Distance(thePlayer.transform.position, this.transform.position) > this.deactivateRadius)
-        {
+        if (activated == true && Vector3.Distance(thePlayer.transform.position, this.transform.position) > this.deactivateRadius){
             activated = false;
-            Debug.Log("Out");
+            Debug.Log("Dynamic Out");
         }
+
+		if (activated == true) {
+		
+
+			if (Vector3.Distance(thePlayer.transform.position, this.transform.position) > boomRange){
+				lookAtPlayer(enemyRotationSpeed);
+
+				chase(enemySpeed + (2 / Vector3.Distance(thePlayer.transform.position, this.transform.position)));
+
+				//Debug.Log (enemySpeed * (10 / Vector3.Distance(thePlayer.transform.position, this.transform.position)));
+			}else{
+				Invoke("explode", explodeTime);
+			}
+		
+		}
 	}
+
+	void explode(){
+		Debug.Log("*explosion*");
+		Destroy (gameObject);
+	}
+
+
+
 }

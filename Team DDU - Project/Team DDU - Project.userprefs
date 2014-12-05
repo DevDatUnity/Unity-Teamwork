@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\EnemyStatic.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy\EnemyStatic.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\EnemyStatic.cs" Line="22" Column="51" />
-      <File FileName="Assets\Scripts\Enemy\EnemyMain.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyStatic.cs" Line="42" Column="1" />
+      <File FileName="Assets\Scripts\PlayerPropertiesScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerInputScript.cs" Line="8" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ClassPad">
